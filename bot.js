@@ -20,7 +20,7 @@ const motivationalReplies = require("./motivationalReplies");
 // find latest tweet according the query 'q' in params
 var retweet = function() {
     var params = {
-        q: '#covid, covid',  // REQUIRED
+        q: '#BTS, #BTSARMY',  // REQUIRED
         result_type: 'recent',
         lang: 'en'
     }
@@ -59,7 +59,7 @@ setInterval(retweet, 20000);
 // find a random tweet and 'favorite' it
 var favoriteTweet = function(){
   var params = {
-      q: '#covid19, coronavirus',  // REQUIRED
+      q: '#BTS, #BTSARMY',  // REQUIRED
       result_type: 'recent',
       lang: 'en'
   }
