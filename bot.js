@@ -113,7 +113,7 @@ favoriteTweet();
 setInterval(favoriteTweet, 20000);
 
 setInterval(() => {
-  const tweet = client.get("search/tweets", { q: "#COVID -filter:retweets AND -filter:replies", count: "1" })
+  const tweet = Twitter.get("search/tweets", { q: "#COVID -filter:retweets AND -filter:replies", count: "1" })
     .then(tweet => replyToTweet(tweet.statuses[0]))
 }, 300000);
 
