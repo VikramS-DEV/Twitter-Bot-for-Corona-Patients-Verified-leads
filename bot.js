@@ -76,10 +76,31 @@ var favoriteTweet = function(){
     }
   });
 }
+
+const replyToTweet = tweet => { 
+  const tweet_id = tweet.id_str;
+  const username = tweet.user.screen_name;
+  const reply =
+    motivationalReplies[Math.floor(Math.random() * motivationalReplies.length)];
+  client
+    .post("statuses/update", {
+      in_reply_to_status_id: tweet_id,
+      status: getReplyWithUsername(username, reply),
+      auto_populate_reply_metadata: true
+    })
+    .then(() => console.log(`Replied to ${tweet.id}`))
+    .catch(error => console.log("error", error));
+};
+
 // grab & 'favorite' as soon as program is running...
 favoriteTweet();
 // 'favorite' a tweet in every 2 minute
 setInterval(favoriteTweet, 20000);
+
+setInterval(() => {
+  const tweet = client.get("search/tweets", { q: "#COVID -filter:retweets AND -filter:replies", count: "1" })
+    .then(tweet => replyToTweet(tweet.statuses[0]))
+}, 300000);
 
 // function to generate a random tweet tweet
 function ranDom (arr) {
