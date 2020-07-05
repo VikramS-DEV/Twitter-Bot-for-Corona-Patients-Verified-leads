@@ -7,13 +7,13 @@ var
 var Twitter = new twit(config);
 const motivationalReplies = require("./motivationalReplies");
 
-const client = new Twitter({
-  subdomain: config.subdomain,
-  consumer_key: config.consumer_key,
-  consumer_secret: config.consumer_secret,
-  access_token_key: config.access_token,
-  access_token_secret: config.access_token_secret
-});
+// const client = new Twitter({
+//   subdomain: config.subdomain,
+//   consumer_key: config.consumer_key,
+//   consumer_secret: config.consumer_secret,
+//   access_token_key: config.access_token,
+//   access_token_secret: config.access_token_secret
+// });
 
 // RETWEET BOT ==========================
 
@@ -96,7 +96,7 @@ const replyToTweet = tweet => {
   const username = tweet.user.screen_name;
   const reply =
     motivationalReplies[Math.floor(Math.random() * motivationalReplies.length)];
-  client
+  Twitter
     .post("statuses/update", {
       in_reply_to_status_id: tweet_id,
       status: getReplyWithUsername(username, reply),
