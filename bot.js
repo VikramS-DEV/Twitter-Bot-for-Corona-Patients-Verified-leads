@@ -5,6 +5,15 @@ var
     config = require('./config');
 
 var Twitter = new twit(config);
+const motivationalReplies = require("./motivationalReplies");
+
+const client = new Twitter({
+  subdomain: config.subdomain,
+  consumer_key: config.consumer_key,
+  consumer_secret: config.consumer_secret,
+  access_token_key: config.access_token,
+  access_token_secret: config.access_token_secret
+});
 
 // RETWEET BOT ==========================
 
@@ -76,6 +85,11 @@ var favoriteTweet = function(){
     }
   });
 }
+
+const getReplyWithUsername = (username, reply) => {
+  return reply.replace(/###/g, `@${username}`);
+};
+
 
 const replyToTweet = tweet => { 
   const tweet_id = tweet.id_str;
