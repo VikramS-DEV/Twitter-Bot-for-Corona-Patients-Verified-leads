@@ -5,15 +5,6 @@ var
     config = require('./config');
 
 var Twitter = new twit(config);
-const motivationalReplies = require("./motivationalReplies");
-
-// const client = new Twitter({
-//   subdomain: config.subdomain,
-//   consumer_key: config.consumer_key,
-//   consumer_secret: config.consumer_secret,
-//   access_token_key: config.access_token,
-//   access_token_secret: config.access_token_secret
-// });
 
 // RETWEET BOT ==========================
 
@@ -85,19 +76,34 @@ var favoriteTweet = function(){
     }
   });
 }
+// grab & 'favorite' as soon as program is running...
+favoriteTweet();
+// 'favorite' a tweet in every 2 minute
+setInterval(favoriteTweet, 20000);
 
-//Code To Reply Tweets
+//Code to Reply Tweets
+const TwitterReply = require("twitter-lite/twitter");
+const config1 = require("./config");
+const motivationalReplies = require("./motivationalReplies");
+
+const client = new TwitterReply({
+  subdomain: config1.subdomain,
+  consumer_key: config1.consumer_key,
+  consumer_secret: config1.consumer_secret,
+  access_token_key: config1.access_token,
+  access_token_secret: config1.access_token_secret
+});
+
 const getReplyWithUsername = (username, reply) => {
   return reply.replace(/###/g, `@${username}`);
 };
-
 
 const replyToTweet = tweet => { 
   const tweet_id = tweet.id_str;
   const username = tweet.user.screen_name;
   const reply =
     motivationalReplies[Math.floor(Math.random() * motivationalReplies.length)];
-  Twitter
+  client
     .post("statuses/update", {
       in_reply_to_status_id: tweet_id,
       status: getReplyWithUsername(username, reply),
@@ -107,18 +113,20 @@ const replyToTweet = tweet => {
     .catch(error => console.log("error", error));
 };
 
-// grab & 'favorite' as soon as program is running...
-favoriteTweet();
-// 'favorite' a tweet in every 2 minute
-setInterval(favoriteTweet, 20000);
-
 setInterval(() => {
-  const tweet = Twitter.get("search/tweets", { q: "#COVID -filter:retweets AND -filter:replies", count: "1" })
+  const tweet = client.get("search/tweets", { q: "#BTS -filter:retweets AND -filter:replies", count: "1" })
     .then(tweet => replyToTweet(tweet.statuses[0]))
-}, 300000);
+}, 600000);
+
+//--------------------------------------------
 
 // function to generate a random tweet tweet
 function ranDom (arr) {
+  if(arr!==undefined)
+  return arr[6];
+  else
+  {
   var index = Math.floor(Math.random()*arr.length);
   return arr[index];
+  }
 };
