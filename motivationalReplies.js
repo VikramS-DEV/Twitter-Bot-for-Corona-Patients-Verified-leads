@@ -1,3 +1,3 @@
 module.exports = [
-    "Hey! Have a nice day"
+    "Hey! Stay home and stay safe! Have a nice day"
 ]
