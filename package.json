@@ -19,6 +19,6 @@
   "homepage": "https://github.com/redianmarku/js-twitter-bot#readme",
   "dependencies": {
     "twit": "^2.2.11",
-    "twitter-lite": "^0.14.0"
+    "twitter-lite": "^0.9.4"
   }
 }
