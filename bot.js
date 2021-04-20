@@ -14,7 +14,7 @@ var Twitter = new twit(config);
 // find latest tweet according the query 'q' in params
 var retweet = function() {
     var params = {
-        q: 'need plasma,need remdesivir,need bed,need oxygen,#covidhelp',  // REQUIRED
+        q: 'need plasma,need remdesivir',  // REQUIRED
         result_type: 'recent',
         lang: 'en'
     }
@@ -53,7 +53,7 @@ setInterval(retweet, 20000);
 // find a random tweet and 'favorite' it
 var favoriteTweet = function(){
   var params = {
-      q: 'need plasma,need remdesivir,need bed,need oxygen,#covidhelp',  // REQUIRED
+      q: 'need plasma,need remdesivir',  // REQUIRED
       result_type: 'recent',
       lang: 'en'
   }
