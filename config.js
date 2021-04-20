@@ -7,8 +7,8 @@
  */
 module.exports = {
   subdomain: "api",
-  consumer_key: "Hd7V2EKNiNjAmYGrPUUjrm6rp",
-  consumer_secret: "LZOhqgJ9lXXW8ZbWAXtxM6JkRrfrqCEajKUVNQVyGcZ6v9HL4j",
-  access_token: "1279427017050451968-I6fV6w9iuuX1KuOvMtCPbN2vhX3ACI",
-  access_token_secret: "avwFLctxQmuyO77GmWsKUpdIIT40uKH5DWEQPPWovKa2D"
+  consumer_key: "9YyafsmVdoEanwa8QJtrkHYdd",
+  consumer_secret: "ysOc4WOMWXsIMwWIsu834gE91k475maEgOtzh63534aYzZl7SR",
+  access_token: "1384559978929745922-AD7qQA10h3o62qhpFUlgh17cS1nHg5",
+  access_token_secret: "ZVupwwxMwe3jLxU7mCn7iss4eiBcEUSnaOeph79CsYaHi"
   }
