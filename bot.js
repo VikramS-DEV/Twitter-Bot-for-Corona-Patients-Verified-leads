@@ -14,7 +14,7 @@ var Twitter = new twit(config);
 // find latest tweet according the query 'q' in params
 var retweet = function() {
     var params = {
-        q: 'need plasma,need remdesivir',  // REQUIRED
+        q: 'need oxygen,need remdesivir, need bed',  // REQUIRED
         result_type: 'recent',
         lang: 'en'
     }
@@ -49,11 +49,11 @@ retweet();
 setInterval(retweet, 20000);
 
 // FAVORITE BOT====================
-
+/*
 // find a random tweet and 'favorite' it
 var favoriteTweet = function(){
   var params = {
-      q: 'need plasma,need remdesivir',  // REQUIRED
+      q: 'need oxygen,need remdesivir, need bed',  // REQUIRED
       result_type: 'recent',
       lang: 'en'
   }
@@ -82,7 +82,7 @@ var favoriteTweet = function(){
 // grab & 'favorite' as soon as program is running...
 favoriteTweet();
 // 'favorite' a tweet in every 2 minute
-setInterval(favoriteTweet, 20000);
+setInterval(favoriteTweet, 20000); */
 /*
 //Code to Reply Tweets
 const TwitterReply = require("twitter-lite/twitter");
