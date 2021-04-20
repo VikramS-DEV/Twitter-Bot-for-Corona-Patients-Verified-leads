@@ -53,7 +53,7 @@ setInterval(retweet, 20000);
 // find a random tweet and 'favorite' it
 var favoriteTweet = function(){
   var params = {
-      q: '#verified,#covidhelp'  // REQUIRED
+      q: '#verified,#covidhelp,#Verified',  // REQUIRED
       result_type: 'recent',
       lang: 'en'
   }
