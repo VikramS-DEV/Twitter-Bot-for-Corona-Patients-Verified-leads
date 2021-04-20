@@ -11,7 +11,7 @@ var Twitter = new twit(config);
 // find latest tweet according the query 'q' in params
 var retweet = function() {
     var params = {
-        q: '#BTS, #BTSARMY',  // REQUIRED
+        q: 'need plasma,need remdesivir,need bed,need oxygen,#covidhelp,#covidhelpIndia',  // REQUIRED
         result_type: 'recent',
         lang: 'en'
     }
@@ -40,7 +40,7 @@ var retweet = function() {
     });
 }
 
-// grab & retweet as soon as program is running...
+ //grab & retweet as soon as program is running...
 retweet();
 // retweet in every 2 minute
 setInterval(retweet, 20000);
@@ -50,7 +50,7 @@ setInterval(retweet, 20000);
 // find a random tweet and 'favorite' it
 var favoriteTweet = function(){
   var params = {
-      q: '#BTS, #BTSARMY',  // REQUIRED
+      q: 'need plasma,need remdesivir,need bed,need oxygen,#covidhelp,#covidhelpIndia',  // REQUIRED
       result_type: 'recent',
       lang: 'en'
   }
@@ -81,6 +81,7 @@ favoriteTweet();
 // 'favorite' a tweet in every 2 minute
 setInterval(favoriteTweet, 20000);
 
+/*
 //Code to Reply Tweets
 const TwitterReply = require("twitter-lite/twitter");
 const config1 = require("./config");
@@ -114,10 +115,10 @@ const replyToTweet = tweet => {
 };
 
 setInterval(() => {
-  const tweet = client.get("search/tweets", { q: "#BTS -filter:retweets AND -filter:replies", count: "1" })
+  const tweet = client.get("search/tweets", { q: "delete tweets -filter:retweets AND -filter:replies", count: "1" })
     .then(tweet => replyToTweet(tweet.statuses[0]))
 }, 600000);
-
+*/
 //--------------------------------------------
 
 // function to generate a random tweet tweet
