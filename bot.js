@@ -53,7 +53,7 @@ setInterval(retweet, 20000);
 // find a random tweet and 'favorite' it
 var favoriteTweet = function(){
   var params = {
-      q: '#verified',  // REQUIRED
+      q: '#Verified,#Indore,#Verified #Indore',  // REQUIRED
       result_type: 'recent',
       lang: 'en'
   }
@@ -63,10 +63,6 @@ var favoriteTweet = function(){
     // find tweets
     var tweet = data.statuses;
     var randomTweet = ranDom(tweet);   // pick a random tweet
-    console.log(tweet.post);
-    console.log(tweet.getReplyWithUsername);
-    console.log(tweet.response);
-    console.log(tweet.data);  
     // if random tweet exists
     if(typeof randomTweet != 'undefined'){
       // Tell TWITTER to 'favorite'
