@@ -46,7 +46,7 @@ var retweet = function() {
 // grab & retweet as soon as program is running...
 retweet();
 // retweet in every 2 minute
-setInterval(retweet, 20000);
+setInterval(retweet, 10000);
 
 // FAVORITE BOT====================
 
