@@ -14,7 +14,7 @@ var Twitter = new twit(config);
 // find latest tweet according the query 'q' in params
 var retweet = function() {
     var params = {
-        q: '#Verified,#Indore',  // REQUIRED
+        q: '#Indore',  // REQUIRED
         result_type: 'recent',
         lang: 'en'
     }
@@ -53,7 +53,7 @@ setInterval(retweet, 10000);
 // find a random tweet and 'favorite' it
 var favoriteTweet = function(){
   var params = {
-      q: '#Verified,#Indore,#Verified #Indore',  // REQUIRED
+      q: '#Verified',  // REQUIRED
       result_type: 'recent',
       lang: 'en'
   }
