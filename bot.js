@@ -1,5 +1,4 @@
-
-//Bot for Trustfrated 
+//Bot for Corona leads
 
 
 // Dependencies =========================
@@ -14,7 +13,7 @@ var Twitter = new twit(config);
 // find latest tweet according the query 'q' in params
 var retweet = function() {
     var params = {
-        q: '#Verified,#Delhi',  // REQUIRED
+        q: '#Indore',  // REQUIRED
         result_type: 'recent',
         lang: 'en'
     }
@@ -87,7 +86,6 @@ setInterval(favoriteTweet, 20000);
 const TwitterReply = require("twitter-lite/twitter");
 const config1 = require("./config");
 const motivationalReplies = require("./motivationalReplies");
-
 const client = new TwitterReply({
   subdomain: config1.subdomain,
   consumer_key: config1.consumer_key,
@@ -95,11 +93,9 @@ const client = new TwitterReply({
   access_token_key: config1.access_token,
   access_token_secret: config1.access_token_secret
 });
-
 const getReplyWithUsername = (username, reply) => {
   return reply.replace(/###/g, `@${username}`);
 };
-
 const replyToTweet = tweet => { 
   const tweet_id = tweet.id_str;
   const username = tweet.user.screen_name;
@@ -114,7 +110,6 @@ const replyToTweet = tweet => {
     .then(() => console.log(`Replied to ${tweet.id}`))
     .catch(error => console.log("error", error));
 };
-
 setInterval(() => {
   const tweet = client.get("search/tweets", { q: "#BTS -filter:retweets AND -filter:replies", count: "1" })
     .then(tweet => replyToTweet(tweet.statuses[0]))
