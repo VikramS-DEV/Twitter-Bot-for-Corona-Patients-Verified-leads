@@ -14,7 +14,7 @@ var Twitter = new twit(config);
 // find latest tweet according the query 'q' in params
 var retweet = function() {
     var params = {
-        q: '#Indore',  // REQUIRED
+        q: '#Verified,#Delhi',  // REQUIRED
         result_type: 'recent',
         lang: 'en'
     }
