@@ -13,7 +13,7 @@ var Twitter = new twit(config);
 // find latest tweet according the query 'q' in params
 var retweet = function() {
     var params = {
-        q: '#Verified,#Pune',  // REQUIRED
+        q: '#Verified,Pune',  // REQUIRED
         result_type: 'recent',
         lang: 'en'
     }
